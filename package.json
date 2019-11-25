@@ -1,0 +1,52 @@
+{
+    "name": "vscode-blink-mind",
+    "displayName": "Blink Mind",
+    "description": "A mind map extention for vscode",
+    "version": "0.0.1",
+    "publisher": "awehook",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "icon": "resources/icon.png",
+    "categories": [
+        "Other"
+    ],
+    "homepage": "https://github.com/awehook/vscode-blink-mind",
+    "keywords": [
+        "mindmap",
+        "mind",
+        "map",
+        "vscode",
+        "editor"
+    ],
+    "activationEvents": [
+        "onLanguage:json",
+        "onCommand:vscode-blink-mind.start"
+    ],
+    "main": "./out/src/extension",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/awehook/vscode-blink-mind.git"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "vscode-blink-mind.start",
+                "title": "Start Mindmap editor session",
+                "category": "Mindmap editor"
+            }
+        ]
+    },
+    "scripts": {
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "aqua": "^1.0.1",
+        "tslint": "^5.8.0",
+        "tslint-microsoft-contrib": "^5.0.3",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {}
+}
