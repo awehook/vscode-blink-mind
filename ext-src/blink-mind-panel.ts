@@ -1,33 +1,45 @@
-import * as vscode from "vscode";
-import * as path from "path";
+import * as vscode from 'vscode';
+import * as path from 'path';
+import { writeFileToDisk } from './utils';
 
 export class BlinkMindPanel {
-  public static currentPanel: BlinkMindPanel | undefined;
-
-  private static readonly viewType: string = "blink-mind";
-  private static readonly extentionPrefix: string = "vscode-blink-mind";
+  public static openedPanels: Map<string, BlinkMindPanel> = new Map();
+  private static readonly viewType: string = 'blink-mind';
+  private static readonly extentionPrefix: string = 'vscode-blink-mind';
 
   private readonly _webViewPanel: vscode.WebviewPanel;
   private readonly _extentionPath: string;
-  private _currentEditor: vscode.TextEditor | undefined;
+  private _document: vscode.TextDocument;
+  private _filePath: string;
   private _disposables: vscode.Disposable[] = [];
 
-  constructor(extentionPath: string, column: vscode.ViewColumn) {
+  constructor(
+    extentionPath: string,
+    column: vscode.ViewColumn,
+    document: vscode.TextDocument
+  ) {
     this._extentionPath = extentionPath;
-    this._currentEditor = vscode.window.activeTextEditor;
+    this._document = document;
+    this._filePath = this._document.fileName;
+    console.log('filePath:', this._filePath);
     this._webViewPanel = vscode.window.createWebviewPanel(
       BlinkMindPanel.viewType,
-      "Mindmap Editor",
+      'Mindmap Editor ' + this._filePath,
       column,
       {
         enableScripts: true,
         localResourceRoots: [
-          vscode.Uri.file(path.join(this._extentionPath, "build"))
+          vscode.Uri.file(path.join(this._extentionPath, 'build'))
         ]
       }
     );
 
     this._webViewPanel.webview.html = this._getHtmlForWebview();
+
+    this._webViewPanel.webview.onDidReceiveMessage(this.webViewMsgHandler);
+
+    // vscode.workspace.onDidSaveTextDocument(() => this.onDocumentChanged());
+    vscode.window.onDidChangeActiveTextEditor(() => this.onDocumentChanged());
 
     this._webViewPanel.onDidDispose(
       () => this.dispose(),
@@ -36,33 +48,68 @@ export class BlinkMindPanel {
     );
   }
 
-  public static CreateOrShow(extentionPath: string): void {
-    const column = vscode.ViewColumn.Three;
+  private webViewMsgHandler = message => {
+    console.log('webViewMsgHandler', message);
+    switch (message.command) {
+      case 'save':
+        writeFileToDisk(this._filePath, message.data);
+        break;
+      case 'loaded':
+        console.log('loaded');
+        this.onDocumentChanged();
+        break;
+    }
+  };
 
-    if (BlinkMindPanel.currentPanel) {
-      BlinkMindPanel.currentPanel._webViewPanel.reveal(column);
-    } else {
-      BlinkMindPanel.currentPanel = new BlinkMindPanel(extentionPath, column);
+  private onDocumentChanged() {
+    console.log('onDocumentChanged');
+    const json: string = this.getJson();
+    const obj = { model: json };
+    const data = JSON.stringify(obj);
+    console.log('postMessage:', obj);
+    this._webViewPanel.webview.postMessage(obj);
+  }
+
+  private getJson(): string {
+    let json: string = '';
+    if (this._document) {
+      json = this._document.getText();
+    }
+    return json;
+  }
+
+  public static CreateOrShow(
+    extentionPath: string,
+    document: vscode.TextDocument
+  ): void {
+    const column = vscode.ViewColumn.One;
+    if (BlinkMindPanel.openedPanels.has(document.fileName))
+      BlinkMindPanel.openedPanels
+        .get(document.fileName)
+        ._webViewPanel.reveal(column);
+    else {
+      const panel = new BlinkMindPanel(extentionPath, column, document);
+      BlinkMindPanel.openedPanels.set(document.fileName, panel);
     }
   }
 
   private _getHtmlForWebview() {
     const manifest = require(path.join(
       this._extentionPath,
-      "build",
-      "asset-manifest.json"
+      'build',
+      'asset-manifest.json'
     ));
-    const mainScript = manifest["main.js"];
-    const mainStyle = manifest["main.css"];
+    const mainScript = manifest['main.js'];
+    const mainStyle = manifest['main.css'];
 
     const scriptPathOnDisk = vscode.Uri.file(
-      path.join(this._extentionPath, "build", mainScript)
+      path.join(this._extentionPath, 'build', mainScript)
     );
-    const scriptUri = scriptPathOnDisk.with({ scheme: "vscode-resource" });
+    const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
     const stylePathOnDisk = vscode.Uri.file(
-      path.join(this._extentionPath, "build", mainStyle)
+      path.join(this._extentionPath, 'build', mainStyle)
     );
-    const styleUri = stylePathOnDisk.with({ scheme: "vscode-resource" });
+    const styleUri = stylePathOnDisk.with({ scheme: 'vscode-resource' });
 
     const nonce = getNonce();
 
@@ -74,9 +121,9 @@ export class BlinkMindPanel {
 				<meta name="theme-color" content="#ffffff">
 				<title>React App</title>
 				<link rel="stylesheet" type="text/css" href="${styleUri}">
-				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src 'self' data: vscode-resource:; img-src vscode-resource: https:; script-src 'nonce-${nonce}' 'unsafe-eval';style-src vscode-resource: 'unsafe-inline' http: https: data:;">
-				<base href="${vscode.Uri.file(path.join(this._extentionPath, "build")).with({
-          scheme: "vscode-resource"
+				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src 'self' data: vscode-resource:; img-src vscode-resource: https:; script-src 'nonce-${nonce}' 'unsafe-eval' 'unsafe-inline';style-src vscode-resource: 'unsafe-inline' http: https: data:;">
+				<base href="${vscode.Uri.file(path.join(this._extentionPath, 'build')).with({
+          scheme: 'vscode-resource'
         })}/">
 			</head>
 
@@ -87,12 +134,11 @@ export class BlinkMindPanel {
 				<script nonce="${nonce}" src="${scriptUri}"></script>
 			</body>
       </html>`;
-      console.log(html);
-      return html;
+    return html;
   }
 
   public dispose() {
-    BlinkMindPanel.currentPanel = undefined;
+    BlinkMindPanel.openedPanels.delete(this._filePath);
 
     this._webViewPanel.dispose();
     while (this._disposables.length) {
@@ -105,9 +151,9 @@ export class BlinkMindPanel {
 }
 
 function getNonce() {
-  let text = "";
+  let text = '';
   const possible =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   for (let i = 0; i < 32; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }

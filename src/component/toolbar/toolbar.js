@@ -1,14 +1,12 @@
-import React from "react";
-import cx from "classnames";
-import { Popover, Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
-import "./Toolbar.css";
-import { DiagramLayoutType } from "@blink-mind/core";
-import { iconClassName, Icon } from "@blink-mind/renderer-react";
+import React from 'react';
+import cx from 'classnames';
+import { Popover, Menu, MenuItem, MenuDivider } from '@blueprintjs/core';
+import './Toolbar.css';
+import { iconClassName } from '@blink-mind/renderer-react';
 
-import { ToolbarItemLayout } from "./toolbar-item-layout";
-import { ToolbarItemTheme } from "./toolbar-item-theme";
-import { ToolbarItemExport } from "./toolbar-item-export";
-import {ToolbarItemSaveAs} from "./toolbar-item-saveas";
+import { ToolbarItemLayout } from './toolbar-item-layout';
+import { ToolbarItemTheme } from './toolbar-item-theme';
+import { ToolbarItemSave } from './toolbar-item-save';
 
 // import debug from "debug";
 // const log = debug("app");
@@ -17,7 +15,7 @@ export class Toolbar extends React.PureComponent {
   renderExportItem() {
     const { onClickExportJson } = this.props;
     return (
-      <div className={cx("bm-toolbar-item", iconClassName("export"))}>
+      <div className={cx('bm-toolbar-item', iconClassName('export'))}>
         <Popover enforceFocus={false}>
           <div className="bm-toolbar-popover-target" />
           <Menu>
@@ -29,35 +27,25 @@ export class Toolbar extends React.PureComponent {
     );
   }
   render() {
-    const {
-      onClickOpenFile,
-      onClickUndo,
-      onClickRedo,
-      canUndo,
-      canRedo
-    } = this.props;
+    const props = this.props;
+    const { onClickUndo, onClickRedo, canUndo, canRedo } = props;
 
     return (
       <div className="bm-toolbar">
-        <div
-          className={`bm-toolbar-item ${iconClassName("openfile")}`}
-          onClick={onClickOpenFile}
-        />
-        {ToolbarItemSaveAs(this.props)}
-        {ToolbarItemExport(this.props)}
-        {ToolbarItemTheme(this.props)}
-        {ToolbarItemLayout(this.props)}
+        {ToolbarItemSave(props)}
+        {ToolbarItemTheme(props)}
+        {ToolbarItemLayout(props)}
 
         <div
-          className={cx("bm-toolbar-item", iconClassName("undo"), {
-            "bm-toolbar-item-disabled": !canUndo
+          className={cx('bm-toolbar-item', iconClassName('undo'), {
+            'bm-toolbar-item-disabled': !canUndo
           })}
           onClick={onClickUndo}
         />
 
         <div
-          className={cx("bm-toolbar-item", iconClassName("redo"), {
-            "bm-toolbar-item-disabled": !canRedo
+          className={cx('bm-toolbar-item', iconClassName('redo'), {
+            'bm-toolbar-item-disabled': !canRedo
           })}
           onClick={onClickRedo}
         />

@@ -19,7 +19,7 @@ export function generateSimpleModel() {
 
   const rootKey = createKey();
 
-  return Model.create({
+  const model = Model.create({
     rootTopicKey: rootKey,
     topics: [
       {
@@ -28,4 +28,8 @@ export function generateSimpleModel() {
       }
     ]
   });
+
+  console.log(model.config.theme);
+
+  return model
 }

@@ -23,24 +23,50 @@
   ],
   "activationEvents": [
     "onLanguage:json",
-    "onCommand:vscode-blink-mind.start"
+    "onLanguage:blinkmind",
+    "onCommand:vscode-blink-mind.start",
+    "onCommand:vscode-blink-mind.open-file",
+    "onCommand:vscode-blink-mind.create-new-mindmap"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/awehook/vscode-blink-mind.git"
   },
   "contributes": {
+    "languages": [
+      {
+        "id": "blinkmind",
+        "extensions": [
+          ".blinkmind"
+        ],
+        "aliases": [
+          "blinkmind",
+          "BLINKMIND"
+        ]
+      }
+    ],
     "commands": [
       {
         "command": "vscode-blink-mind.start",
         "title": "Start Mindmap editor session",
+        "category": "Mindmap editor"
+      },
+      {
+        "command": "vscode-blink-mind.open-file",
+        "title": "Mindmap open file",
+        "category": "Mindmap editor"
+      },
+      {
+        "command": "vscode-blink-mind.create-new-mindmap",
+        "title": "Create new mindmap",
         "category": "Mindmap editor"
       }
     ]
   },
   "scripts": {
     "build": "node scripts/build.js && tsc -p tsconfig.extension.json",
-    "build-ts": "tsc -p tsconfig.extension.json"
+    "build-ts": "tsc -p tsconfig.extension.json",
+    "build-w": "tsc -p tsconfig.extension.json -w"
   },
   "devDependencies": {
     "@babel/helper-create-regexp-features-plugin": "^7.7.4",
@@ -55,7 +81,7 @@
   },
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@blink-mind/core": "0.0.6",
+    "@blink-mind/core": "0.0.7",
     "@blink-mind/icons": "0.0.7",
     "@blink-mind/plugin-json-serializer": "0.0.7",
     "@blink-mind/plugin-rich-text-editor": "0.0.7",

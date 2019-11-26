@@ -953,18 +953,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@blink-mind/core@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.6.tgz#b0b9782d05874400ad1aa587b9c4ead5ebcad5a0"
-  integrity sha1-sLl4LQWHRACtGqWHucTq1evK1aA=
-  dependencies:
-    debug "^4.1.1"
-    immutable "^4.0.0-rc.12"
-    is-plain-object "^3.0.0"
-    memoize-one "^5.1.1"
-    tiny-warning "^1.0.3"
-
-"@blink-mind/core@^0.0.7":
+"@blink-mind/core@0.0.7", "@blink-mind/core@^0.0.7":
   version "0.0.7"
   resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.7.tgz#f32cb0db3d6a2f57c96ca317db8419c7e9c4ba10"
   integrity sha1-8yyw2z1qL1fJbKMX24QZx+nEuhA=
@@ -3443,7 +3432,7 @@ debug@^3.0.0, debug@^3.1.0, debug@^3.1.1, debug@^3.2.5, debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
+debug@^4.0.1, debug@^4.1.0:
   version "4.1.1"
   resolved "https://registry.npm.taobao.org/debug/download/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha1-O3ImAlUQnGtYnO4FDx1RYTlmR5E=
