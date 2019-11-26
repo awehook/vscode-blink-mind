@@ -39,7 +39,8 @@
     ]
   },
   "scripts": {
-    "build": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "eject": "react-scripts eject",
+    "build": "./support/build-non-split.js && tsc -p tsconfig.extension.json",
     "build-ts": "tsc -p tsconfig.extension.json"
   },
   "devDependencies": {
