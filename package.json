@@ -39,18 +39,19 @@
     ]
   },
   "scripts": {
-    "build": "./support/build-non-split.js && tsc -p tsconfig.extension.json",
+    "build": "node scripts/build.js && tsc -p tsconfig.extension.json",
     "build-ts": "tsc -p tsconfig.extension.json"
   },
   "devDependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
     "@types/jest": "^23.3.13",
     "@types/node": "^10.1.2",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "prettier": "^1.19.1",
     "rewire": "^4.0.1",
     "typescript": "^3.3.1",
-    "vscode": "^1.1.6",
-    "prettier": "^1.19.1"
+    "vscode": "^1.1.6"
   },
   "dependencies": {
     "@babel/core": "7.2.2",
