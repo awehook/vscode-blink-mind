@@ -57,10 +57,11 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "@blink-mind/core": "0.0.6",
-    "@blink-mind/plugin-json-serializer": "0.0.6",
-    "@blink-mind/plugin-rich-text-editor": "0.0.6",
-    "@blink-mind/plugin-theme-selector": "0.0.6",
-    "@blink-mind/renderer-react": "0.0.6",
+    "@blink-mind/plugin-json-serializer": "0.0.7",
+    "@blink-mind/plugin-rich-text-editor": "0.0.7",
+    "@blink-mind/plugin-theme-selector": "0.0.7",
+    "@blink-mind/renderer-react": "0.0.7",
+    "@blink-mind/icons": "0.0.7",
     "@blueprintjs/core": "^3.17.2"
   },
   "browserslist": [
