@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext): void {
     const fullname = doc.fileName;
     const extName = path.extname(fullname).slice(1);
     if (!matchableFileTypes.includes(extName)) return;
-    vscode.commands.executeCommand('vscode-blink-mind.start',doc);
+    vscode.commands.executeCommand('vscode-blink-mind.start', doc);
   });
 
   const createNewMindMapCommand = vscode.commands.registerCommand(
@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext): void {
         })
         .then(filename => {
           let targetFolder = vscode.workspace.rootPath;
-          const fullname = path.join(targetFolder, filename);
+          const fullname = path.join(targetFolder, filename + '.blinkmind');
           const data = JSON.stringify(templateJson, null, 2);
           fs.writeFile(fullname, data, function(err) {
             if (err) {
