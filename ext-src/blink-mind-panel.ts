@@ -21,7 +21,7 @@ export class BlinkMindPanel {
     this._extentionPath = extentionPath;
     this._document = document;
     this._filePath = this._document.fileName;
-    console.log('filePath:', this._filePath);
+
     this._webViewPanel = vscode.window.createWebviewPanel(
       BlinkMindPanel.viewType,
       'Mindmap Editor ' + this._filePath,
@@ -49,24 +49,23 @@ export class BlinkMindPanel {
   }
 
   private webViewMsgHandler = message => {
-    console.log('webViewMsgHandler', message);
+    // console.log('webViewMsgHandler', message);
     switch (message.command) {
       case 'save':
         writeFileToDisk(this._filePath, message.data);
         break;
       case 'loaded':
-        console.log('loaded');
         this.onDocumentChanged();
         break;
     }
   };
 
   private onDocumentChanged() {
-    console.log('onDocumentChanged');
+    // console.log('onDocumentChanged');
     const json: string = this.getJson();
     const obj = { model: json };
     const data = JSON.stringify(obj);
-    console.log('postMessage:', obj);
+    // console.log('postMessage:', obj);
     this._webViewPanel.webview.postMessage(obj);
   }
 

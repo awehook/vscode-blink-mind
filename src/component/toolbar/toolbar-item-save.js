@@ -7,7 +7,6 @@ export function ToolbarItemSave(props) {
     const { diagram } = props;
     const diagramProps = diagram.getDiagramProps();
     const { controller } = diagramProps;
-    console.log('onClickSave', diagramProps, diagramProps.model.topics.size);
     const json = controller.run('serializeModel', diagramProps);
     const jsonStr = JSON.stringify(json, null, 2);
     window.vscode.postMessage({

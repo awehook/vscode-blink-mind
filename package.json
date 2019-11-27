@@ -9,7 +9,6 @@
   "engines": {
     "vscode": "^1.24.0"
   },
-  "icon": "resources/icon.png",
   "categories": [
     "Other"
   ],
@@ -25,7 +24,6 @@
     "onLanguage:json",
     "onLanguage:blinkmind",
     "onCommand:vscode-blink-mind.start",
-    "onCommand:vscode-blink-mind.open-file",
     "onCommand:vscode-blink-mind.create-new-mindmap"
   ],
   "repository": {
@@ -37,7 +35,8 @@
       {
         "id": "blinkmind",
         "extensions": [
-          ".blinkmind"
+          ".blinkmind",
+          ".bm"
         ],
         "aliases": [
           "blinkmind",
@@ -52,11 +51,6 @@
         "category": "Mindmap editor"
       },
       {
-        "command": "vscode-blink-mind.open-file",
-        "title": "Mindmap open file",
-        "category": "Mindmap editor"
-      },
-      {
         "command": "vscode-blink-mind.create-new-mindmap",
         "title": "Create new mindmap",
         "category": "Mindmap editor"
@@ -64,31 +58,21 @@
     ]
   },
   "scripts": {
+    "package": "vsce package --yarn",
     "build": "node scripts/build.js && tsc -p tsconfig.extension.json",
+    "build-production": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
+    "vscode:prepublish": "yarn build-production",
     "build-ts": "tsc -p tsconfig.extension.json",
     "build-w": "tsc -p tsconfig.extension.json -w"
   },
   "devDependencies": {
+    "@babel/core": "7.2.2",
     "@babel/helper-create-regexp-features-plugin": "^7.7.4",
+    "@svgr/webpack": "4.1.0",
     "@types/jest": "^23.3.13",
     "@types/node": "^10.1.2",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
-    "prettier": "^1.19.1",
-    "rewire": "^4.0.1",
-    "typescript": "^3.3.1",
-    "vscode": "^1.1.6"
-  },
-  "dependencies": {
-    "@babel/core": "7.2.2",
-    "@blink-mind/core": "0.0.7",
-    "@blink-mind/icons": "0.0.7",
-    "@blink-mind/plugin-json-serializer": "0.0.7",
-    "@blink-mind/plugin-rich-text-editor": "0.0.7",
-    "@blink-mind/plugin-theme-selector": "0.0.7",
-    "@blink-mind/renderer-react": "0.0.7",
-    "@blueprintjs/core": "^3.17.2",
-    "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
@@ -97,9 +81,11 @@
     "babel-preset-react-app": "^7.0.2",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "cross-env": "^6.0.3",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
+    "drop-console-webpack-plugin": "^3.0.2",
     "eslint": "5.12.0",
     "eslint-config-react-app": "^3.0.8",
     "eslint-loader": "2.1.1",
@@ -122,19 +108,33 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
-    "react": "^16.12.0",
+    "prettier": "^1.19.1",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
-    "react-dom": "^16.12.0",
     "resolve": "1.10.0",
+    "rewire": "^4.0.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.2",
+    "typescript": "^3.3.1",
     "url-loader": "1.1.2",
+    "vsce": "^1.69.0",
+    "vscode": "^1.1.6",
     "webpack": "4.28.3",
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"
+  },
+  "dependencies": {
+    "@blink-mind/core": "0.0.8",
+    "@blink-mind/icons": "0.0.8",
+    "@blink-mind/plugin-json-serializer": "0.0.8",
+    "@blink-mind/plugin-rich-text-editor": "0.0.8",
+    "@blink-mind/plugin-theme-selector": "0.0.8",
+    "@blink-mind/renderer-react": "0.0.8",
+    "@blueprintjs/core": "^3.17.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "browserslist": [
     ">0.2%",

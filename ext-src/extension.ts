@@ -25,18 +25,8 @@ export function activate(context: vscode.ExtensionContext): void {
     }
   );
 
-  const textEditorCommand = vscode.commands.registerTextEditorCommand(
-    'vscode-blink-mind.open-file',
-    () => {
-      const editor = vscode.window.activeTextEditor;
-      const fileName = editor.document.fileName;
-      console.log('openfile', fileName);
-    }
-  );
-
   vscode.workspace.onDidOpenTextDocument(doc => {
     const fullname = doc.fileName;
-    console.log('onDidOpenTextDocument', fullname);
     const extName = path.extname(fullname).slice(1);
     if (!matchableFileTypes.includes(extName)) return;
     vscode.commands.executeCommand('vscode-blink-mind.start',doc);
@@ -67,11 +57,9 @@ export function activate(context: vscode.ExtensionContext): void {
                 });
             });
           });
-          console.log(filename, templateJson);
         });
     }
   );
   context.subscriptions.push(startCommand);
-  context.subscriptions.push(textEditorCommand);
   context.subscriptions.push(createNewMindMapCommand);
 }

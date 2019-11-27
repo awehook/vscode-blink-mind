@@ -29,7 +29,5 @@ export function generateSimpleModel() {
     ]
   });
 
-  console.log(model.config.theme);
-
   return model
 }

@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+src/**
+scripts/**
+ext-src/**
+public/**
+config/**
+.gitignore
+tsconfig.json
+tsconfig.extension.json
+tslint.json
+.prettierrc.js
+yarn.lock
+yarn-error.log

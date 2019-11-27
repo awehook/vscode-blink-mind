@@ -27,15 +27,12 @@ export class Mindmap extends React.Component {
   componentWillMount() {
     window.vscode = vscode;
     window.addEventListener('message', event => {
-      console.log('messagexxx', event);
       const message = event.data; // The JSON data our extension sent
       if (!message || message === '') return;
       const obj = JSON.parse(message.model);
       const props = this.diagram.getDiagramProps();
       const { controller } = props;
       const model = controller.run('deserializeModel', { controller, obj });
-      // console.log('model', model.topics.size);
-      // console.log(model.rootTopic.style);
       controller.change(model);
     });
   }
@@ -122,7 +119,6 @@ export class Mindmap extends React.Component {
   renderDialog() {}
 
   onChange = model => {
-    console.log('mindmap', model.topics.size);
     this.setState({
       model
     });
