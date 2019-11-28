@@ -2,7 +2,7 @@
   "name": "vscode-blink-mind",
   "displayName": "Blink Mind",
   "description": "A mind map extention for vscode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "awehook",
   "license": "MIT",
   "main": "./build/ext-src/extension.js",
@@ -126,12 +126,12 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "dependencies": {
-    "@blink-mind/core": "0.0.8",
-    "@blink-mind/icons": "0.0.8",
-    "@blink-mind/plugin-json-serializer": "0.0.8",
-    "@blink-mind/plugin-rich-text-editor": "0.0.8",
-    "@blink-mind/plugin-theme-selector": "0.0.8",
-    "@blink-mind/renderer-react": "0.0.8",
+    "@blink-mind/core": "0.0.11",
+    "@blink-mind/icons": "0.0.11",
+    "@blink-mind/plugin-json-serializer": "0.0.11",
+    "@blink-mind/plugin-rich-text-editor": "0.0.11",
+    "@blink-mind/plugin-theme-selector": "0.0.11",
+    "@blink-mind/renderer-react": "0.0.11",
     "@blueprintjs/core": "^3.17.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
