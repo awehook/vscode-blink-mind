@@ -63,7 +63,9 @@
     "build-production": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
     "vscode:prepublish": "yarn build-production",
     "build-ts": "tsc -p tsconfig.extension.json",
-    "build-w": "tsc -p tsconfig.extension.json -w"
+    "build-w": "tsc -p tsconfig.extension.json -w",
+    "link-blink": "yarn link @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons",
+    "unlink-blink": "yarn unlink @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
