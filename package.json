@@ -59,8 +59,9 @@
   },
   "scripts": {
     "package": "vsce package --yarn",
-    "build": "node scripts/build.js && tsc -p tsconfig.extension.json",
-    "build-production": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
+    "clean": "rm -rf ./build",
+    "build": "yarn clean && node scripts/build.js && tsc -p tsconfig.extension.json",
+    "build-production": "yarn clean && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
     "vscode:prepublish": "yarn build-production",
     "build-ts": "tsc -p tsconfig.extension.json",
     "build-w": "tsc -p tsconfig.extension.json -w",
