@@ -3,6 +3,20 @@
     "version": "0.1.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "build",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "debug-build"
+            ],
+            "port": 9229,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
             "name": "Launch Extension",
             "type": "extensionHost",
             "request": "launch",
