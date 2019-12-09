@@ -140,7 +140,8 @@
     "@blink-mind/renderer-react": "0.0.12",
     "@blueprintjs/core": "^3.17.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "serialize-javascript":"^2.1.1"
   },
   "browserslist": [
     ">0.2%",
