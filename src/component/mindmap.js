@@ -1,11 +1,10 @@
 import React from 'react';
-import { Model } from '@blink-mind/core';
 import { Diagram } from '@blink-mind/renderer-react';
 import RichTextEditorPlugin from '@blink-mind/plugin-rich-text-editor';
 import { JsonSerializerPlugin } from '@blink-mind/plugin-json-serializer';
 import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
 import { Toolbar } from './toolbar/toolbar';
-import { downloadFile, generateSimpleModel } from '../utils';
+import { generateSimpleModel } from '../utils';
 import '@blink-mind/renderer-react/lib/main.css';
 import debug from 'debug';
 const log = debug('app');
