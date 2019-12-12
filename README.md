@@ -1,21 +1,21 @@
-# vscode-blink-mind
+o# vscode-blink-mind
 
 [vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is a extention for create and editing mind map in vscode.
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/webpack-mindmap.png)
 # Features
 
 - Infinite canvas size for mind map editing.
-- Markdown editor for topic and topic notes.
+- Markdown editor for topic and topic notes. 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/rich-mark-down-editor.png)
-- HotKey support.
+- HotKey support. 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/hotkey.png)
-- Reorganize the diagram by drag and drop.
+- Reorganize the diagram by drag and drop. 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/drag-and-drop.png)
-- Multiple theme.
+- Multiple theme. 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/blink-mind-theme.png)
-- Every topic's style include font style, border style, link style can be customize.
+- Every topic's style include font style, border style, link style can be customize. 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/style-editor.png)
-- Focus Mode, Any topic can be used as the root node of the diagram.You can navigate by the breadcrumbs.
+- Focus Mode, Any topic can be used as the root node of the diagram.You can navigate by the breadcrumbs. 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/focus-mode.png)
 
 
