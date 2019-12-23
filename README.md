@@ -26,6 +26,12 @@
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/focus-mode.png)
 
+- Add topology diagram as an attchment to the topic, the topology diagram can be edited by the editor.
+
+![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/context-menu-edit-topology.png)
+
+![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/topology-diagram.png)
+
 
 # Usage Tips
 

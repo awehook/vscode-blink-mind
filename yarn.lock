@@ -953,10 +953,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@blink-mind/core@0.0.16", "@blink-mind/core@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.16.tgz?cache=0&sync_timestamp=1577088030701&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fcore%2Fdownload%2F%40blink-mind%2Fcore-0.0.16.tgz#a6c5889387ed3ad9f2a9458ba538ded7ddbe7bb6"
-  integrity sha1-psWIk4ftOtnyqUWLpTje192+e7Y=
+"@blink-mind/core@0.0.17", "@blink-mind/core@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.17.tgz?cache=0&sync_timestamp=1577096239677&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fcore%2Fdownload%2F%40blink-mind%2Fcore-0.0.17.tgz#a74e6196b2b0426ed065f4611b21738a93ad0cc8"
+  integrity sha1-p05hlrKwQm7QZfRhGyFzipOtDMg=
   dependencies:
     debug "^3.1.0"
     immutable "^4.0.0-rc.12"
@@ -964,39 +964,39 @@
     memoize-one "^5.1.1"
     tiny-warning "^1.0.3"
 
-"@blink-mind/icons@0.0.16", "@blink-mind/icons@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/icons/download/@blink-mind/icons-0.0.16.tgz?cache=0&sync_timestamp=1577088033712&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Ficons%2Fdownload%2F%40blink-mind%2Ficons-0.0.16.tgz#aefa09e18dcddf0a44faf35c13aba3f8a50e11d7"
-  integrity sha1-rvoJ4Y3N3wpE+vNcE6uj+KUOEdc=
+"@blink-mind/icons@0.0.17", "@blink-mind/icons@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/icons/download/@blink-mind/icons-0.0.17.tgz?cache=0&sync_timestamp=1577096240326&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Ficons%2Fdownload%2F%40blink-mind%2Ficons-0.0.17.tgz#bcd3cac750047f9fa789a0ba199a0fa39ff05169"
+  integrity sha1-vNPKx1AEf5+niaC6GZoPo5/wUWk=
 
-"@blink-mind/plugin-json-serializer@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-json-serializer/download/@blink-mind/plugin-json-serializer-0.0.16.tgz?cache=0&sync_timestamp=1577088058535&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-json-serializer%2Fdownload%2F%40blink-mind%2Fplugin-json-serializer-0.0.16.tgz#2a62af65e532c222d1687de8118dfc366c4fe8ec"
-  integrity sha1-KmKvZeUywiLRaH3oEY38NmxP6Ow=
+"@blink-mind/plugin-json-serializer@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-json-serializer/download/@blink-mind/plugin-json-serializer-0.0.17.tgz?cache=0&sync_timestamp=1577096239764&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-json-serializer%2Fdownload%2F%40blink-mind%2Fplugin-json-serializer-0.0.17.tgz#2792eb7c114285e26c4dd9db8cbbf41533598d3e"
+  integrity sha1-J5LrfBFCheJsTdnbjLv0FTNZjT4=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
     debug "^3.1.0"
     immutable "^4.0.0-rc.12"
 
-"@blink-mind/plugin-rich-text-editor@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-rich-text-editor/download/@blink-mind/plugin-rich-text-editor-0.0.16.tgz?cache=0&sync_timestamp=1577088085399&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-rich-text-editor%2Fdownload%2F%40blink-mind%2Fplugin-rich-text-editor-0.0.16.tgz#4c693268b5fa98fcb5075e7769fcaaf6ad760d17"
-  integrity sha1-TGkyaLX6mPy1B153afyq9q12DRc=
+"@blink-mind/plugin-rich-text-editor@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-rich-text-editor/download/@blink-mind/plugin-rich-text-editor-0.0.17.tgz?cache=0&sync_timestamp=1577096244564&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-rich-text-editor%2Fdownload%2F%40blink-mind%2Fplugin-rich-text-editor-0.0.17.tgz#3a04877e38ece329ad47a8e00b971884fab949f3"
+  integrity sha1-OgSHfjjs4ymtR6jgC5cYhPq5SfM=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
-    "@blink-mind/renderer-react" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
+    "@blink-mind/renderer-react" "^0.0.17"
     awehook-rich-markdown-editor "^1.0.1"
     debug "^3.1.0"
     react "^16.10.2"
     slate-md-serializer "^5.4.4"
     styled-components "^4.4.0"
 
-"@blink-mind/plugin-simple-text-editor@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-simple-text-editor/download/@blink-mind/plugin-simple-text-editor-0.0.16.tgz?cache=0&sync_timestamp=1577088033743&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-simple-text-editor%2Fdownload%2F%40blink-mind%2Fplugin-simple-text-editor-0.0.16.tgz#890b9b813f0e1a47bbfa0f2cbcec35458bd66727"
-  integrity sha1-iQubgT8OGke7+g8svOw1RYvWZyc=
+"@blink-mind/plugin-simple-text-editor@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-simple-text-editor/download/@blink-mind/plugin-simple-text-editor-0.0.17.tgz?cache=0&sync_timestamp=1577096239648&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-simple-text-editor%2Fdownload%2F%40blink-mind%2Fplugin-simple-text-editor-0.0.17.tgz#20b834442a9b5ee4a564ef68cd5dbdd07f9cc02f"
+  integrity sha1-ILg0RCqbXuSlZO9ozV290H+cwC8=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
     debug "^3.1.0"
     memoize-one "^5.1.1"
     react "^16.10.2"
@@ -1004,25 +1004,25 @@
     slate-react "^0.21.20"
     styled-components "^4.4.0"
 
-"@blink-mind/plugin-theme-selector@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-theme-selector/download/@blink-mind/plugin-theme-selector-0.0.16.tgz?cache=0&sync_timestamp=1577088082962&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-theme-selector%2Fdownload%2F%40blink-mind%2Fplugin-theme-selector-0.0.16.tgz#1a5a5257eaefd8bd7dcca92d927cdaeabcf10609"
-  integrity sha1-GlpSV+rv2L19zKktknza6rzxBgk=
+"@blink-mind/plugin-theme-selector@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-theme-selector/download/@blink-mind/plugin-theme-selector-0.0.17.tgz?cache=0&sync_timestamp=1577096245262&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-theme-selector%2Fdownload%2F%40blink-mind%2Fplugin-theme-selector-0.0.17.tgz#c4a0ed48ed0db538e521fa70f3b142164f7023f9"
+  integrity sha1-xKDtSO0NtTjlIfpw87FCFk9wI/k=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
-    "@blink-mind/renderer-react" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
+    "@blink-mind/renderer-react" "^0.0.17"
     debug "^3.1.0"
     react "^16.10.2"
     styled-components "^4.4.0"
 
-"@blink-mind/plugin-topology-diagram@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topology-diagram/download/@blink-mind/plugin-topology-diagram-0.0.16.tgz?cache=0&sync_timestamp=1577088085870&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-topology-diagram%2Fdownload%2F%40blink-mind%2Fplugin-topology-diagram-0.0.16.tgz#32b51f552e5e8160beaa8a07d458f6c70c5e8444"
-  integrity sha1-MrUfVS5egWC+qooH1Fj2xwxehEQ=
+"@blink-mind/plugin-topology-diagram@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topology-diagram/download/@blink-mind/plugin-topology-diagram-0.0.17.tgz?cache=0&sync_timestamp=1577096244657&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Fplugin-topology-diagram%2Fdownload%2F%40blink-mind%2Fplugin-topology-diagram-0.0.17.tgz#2042e67568f0ef7a8e8a440e710cece731d4e94e"
+  integrity sha1-IELmdWjw73qOikQOcQzs5zHU6U4=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
-    "@blink-mind/icons" "^0.0.16"
-    "@blink-mind/renderer-react" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
+    "@blink-mind/icons" "^0.0.17"
+    "@blink-mind/renderer-react" "^0.0.17"
     "@blueprintjs/core" "^3.19.1"
     debug "^3.1.0"
     react "^16.10.2"
@@ -1033,14 +1033,14 @@
     topology-flow-diagram "^0.0.3"
     topology-sequence-diagram "^0.0.6"
 
-"@blink-mind/renderer-react@0.0.16", "@blink-mind/renderer-react@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npm.taobao.org/@blink-mind/renderer-react/download/@blink-mind/renderer-react-0.0.16.tgz?cache=0&sync_timestamp=1577088082371&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Frenderer-react%2Fdownload%2F%40blink-mind%2Frenderer-react-0.0.16.tgz#5a37725c16f517866de5e65b04dc05fa3b267fb6"
-  integrity sha1-WjdyXBb1F4Zt5eZbBNwF+jsmf7Y=
+"@blink-mind/renderer-react@0.0.17", "@blink-mind/renderer-react@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npm.taobao.org/@blink-mind/renderer-react/download/@blink-mind/renderer-react-0.0.17.tgz?cache=0&sync_timestamp=1577096239759&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40blink-mind%2Frenderer-react%2Fdownload%2F%40blink-mind%2Frenderer-react-0.0.17.tgz#3e566e2038a293c6ef175ca9d3edb8ca113bc0ad"
+  integrity sha1-PlZuIDiik8bvF1yp0+24yhE7wK0=
   dependencies:
-    "@blink-mind/core" "^0.0.16"
-    "@blink-mind/icons" "^0.0.16"
-    "@blink-mind/plugin-simple-text-editor" "^0.0.16"
+    "@blink-mind/core" "^0.0.17"
+    "@blink-mind/icons" "^0.0.17"
+    "@blink-mind/plugin-simple-text-editor" "^0.0.17"
     "@blueprintjs/core" "^3.19.1"
     "@blueprintjs/select" "^3.11.1"
     classnames "^2.2.6"
