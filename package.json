@@ -2,7 +2,7 @@
   "name": "vscode-blink-mind",
   "displayName": "Vscode Blink Mind",
   "description": "A mind map extention for vscode",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "awehook",
   "author": "awehook(awehook@163.com)",
   "license": "MIT",
@@ -69,8 +69,8 @@
     "build:production": "yarn clean && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
     "vscode:prepublish": "yarn build:production",
     "debug:build": "node --inspect-brk scripts/build.js",
-    "link-blink": "yarn link @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons",
-    "unlink-blink": "yarn unlink @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons"
+    "link-blink": "yarn link @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons @blink-mind/plugin-topology-diagram",
+    "unlink-blink": "yarn unlink @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons @blink-mind/plugin-topology-diagram"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -133,12 +133,13 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "dependencies": {
-    "@blink-mind/core": "0.0.14",
-    "@blink-mind/icons": "0.0.14",
-    "@blink-mind/plugin-json-serializer": "0.0.14",
-    "@blink-mind/plugin-rich-text-editor": "0.0.14",
-    "@blink-mind/plugin-theme-selector": "0.0.14",
-    "@blink-mind/renderer-react": "0.0.14",
+    "@blink-mind/core": "0.0.16",
+    "@blink-mind/icons": "0.0.16",
+    "@blink-mind/plugin-json-serializer": "0.0.16",
+    "@blink-mind/plugin-rich-text-editor": "0.0.16",
+    "@blink-mind/plugin-theme-selector": "0.0.16",
+    "@blink-mind/plugin-topology-diagram": "0.0.16",
+    "@blink-mind/renderer-react": "0.0.16",
     "@blueprintjs/core": "^3.17.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
