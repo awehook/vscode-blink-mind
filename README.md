@@ -1,5 +1,16 @@
 # vscode-blink-mind
 
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/d/awehook.vscode-blink-mind.svg?color=4bdbe3" alt="Visual Studio Marketplace Downloads" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/i/awehook.vscode-blink-mind.svg?color=63ba83" alt="Visual Studio Marketplace Installs" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=awehook.vscode-blink-mind" target="__blank"><img src="https://vsmarketplacebadge.apphb.com/trending-monthly/awehook.vscode-blink-mind.svg?color=a1b858" alt="Marketplace Trending Monthly" /></a>
+<br/>
+<a href="https://github.com/awehook/vscode-blink-mind" target="__blank"><img src="https://img.shields.io/github/last-commit/awehook/vscode-blink-mind.svg?color=a38eed" alt="GitHub last commit" /></a>
+<a href="https://github.com/awehook/vscode-blink-mind/issues" target="__blank"><img src="https://img.shields.io/github/issues/awehook/vscode-blink-mind.svg?color=c977be" alt="GitHub issues" /></a>
+<a href="https://github.com/awehook/vscode-blink-mind" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/awehook/vscode-blink-mind?style=social"></a>
+</p>
+
+
 [vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is a extention for create and editing mind map in vscode.
 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/webpack-mindmap.png)
