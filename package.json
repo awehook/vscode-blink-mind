@@ -71,8 +71,8 @@
     "build:production": "yarn clean && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
     "vscode:prepublish": "yarn build:production",
     "debug:build": "node --inspect-brk scripts/build.js",
-    "link-blink": "yarn link @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons @blink-mind/plugin-topology-diagram @blink-mind/plugin-topic-reference",
-    "unlink-blink": "yarn unlink @blink-mind/core @blink-mind/plugin-json-serializer @blink-mind/plugin-rich-text-editor @blink-mind/plugin-theme-selector @blink-mind/renderer-react @blink-mind/icons @blink-mind/plugin-topology-diagram @blink-mind/plugin-topic-reference"
+    "link-blink": "node scripts/blink.js --link",
+    "unlink-blink": "node scripts/blink.js --unlink"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -90,6 +90,7 @@
     "babel-preset-react-app": "^7.0.2",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "commander": "^4.0.1",
     "cross-env": "^6.0.3",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
@@ -140,13 +141,13 @@
     "@blink-mind/plugin-json-serializer": "0.0.18",
     "@blink-mind/plugin-rich-text-editor": "0.0.18",
     "@blink-mind/plugin-theme-selector": "0.0.18",
-    "@blink-mind/plugin-topology-diagram": "0.0.18",
     "@blink-mind/plugin-topic-reference": "0.0.18",
+    "@blink-mind/plugin-topology-diagram": "0.0.18",
     "@blink-mind/renderer-react": "0.0.18",
     "@blueprintjs/core": "^3.17.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "serialize-javascript":"^2.1.1"
+    "serialize-javascript": "^2.1.1"
   },
   "browserslist": [
     ">0.2%",
