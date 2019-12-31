@@ -4,6 +4,7 @@ import RichTextEditorPlugin from '@blink-mind/plugin-rich-text-editor';
 import { JsonSerializerPlugin } from '@blink-mind/plugin-json-serializer';
 import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
 import TopologyDiagramPlugin from '@blink-mind/plugin-topology-diagram'
+import TopicReferencePlugin from '@blink-mind/plugin-topic-reference';
 import { Toolbar } from './toolbar/toolbar';
 import { generateSimpleModel } from '../utils';
 import '@blink-mind/renderer-react/lib/main.css';
@@ -14,9 +15,10 @@ const vscode = acquireVsCodeApi(); // eslint-disable-line no-undef
 
 const plugins = [
   RichTextEditorPlugin(),
-  JsonSerializerPlugin(),
   ThemeSelectorPlugin(),
-  TopologyDiagramPlugin()
+  TopicReferencePlugin(),
+  TopologyDiagramPlugin(),
+  JsonSerializerPlugin(),
 ];
 
 export class Mindmap extends React.Component {
@@ -34,7 +36,7 @@ export class Mindmap extends React.Component {
       const props = this.diagram.getDiagramProps();
       const { controller } = props;
       const model = controller.run('deserializeModel', { controller, obj });
-      controller.change(model);
+      this.diagram.openNewModel(model);
     });
   }
   componentDidMount() {
@@ -116,8 +118,6 @@ export class Mindmap extends React.Component {
     };
     return <Toolbar {...toolbarProps} />;
   }
-
-  renderDialog() {}
 
   onChange = model => {
     this.setState({
