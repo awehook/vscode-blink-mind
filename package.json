@@ -1,211 +1,214 @@
 {
-  "name": "vscode-blink-mind",
-  "displayName": "Vscode Blink Mind",
-  "description": "A mind map extention for vscode",
-  "version": "0.0.6",
-  "publisher": "awehook",
-  "author": "awehook(awehook@163.com)",
-  "license": "MIT",
-  "icon": "assets/icon.png",
-  "main": "./build/ext-src/extension.js",
-  "engines": {
-    "vscode": "^1.24.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "homepage": "https://github.com/awehook/vscode-blink-mind",
-  "keywords": [
-    "mindmap",
-    "mind",
-    "map",
-    "topology",
-    "flowchart",
-    "vscode",
-    "editor"
-  ],
-  "activationEvents": [
-    "onLanguage:json",
-    "onLanguage:blinkmind",
-    "onCommand:vscode-blink-mind.start",
-    "onCommand:vscode-blink-mind.create-new-mindmap"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/awehook/vscode-blink-mind.git"
-  },
-  "contributes": {
-    "languages": [
-      {
-        "id": "blinkmind",
-        "extensions": [
-          ".blinkmind",
-          ".bm"
-        ],
-        "aliases": [
-          "blinkmind",
-          "BLINKMIND"
-        ]
-      }
-    ],
-    "commands": [
-      {
-        "command": "vscode-blink-mind.start",
-        "title": "Start Mindmap editor session",
-        "category": "Mindmap editor"
-      },
-      {
-        "command": "vscode-blink-mind.create-new-mindmap",
-        "title": "Create new mindmap",
-        "category": "Mindmap editor"
-      }
-    ]
-  },
-  "scripts": {
-    "package": "vsce package --yarn",
-    "clean": "rm -rf ./build",
-    "build": "yarn clean && yarn build:web && yarn build:ts",
-    "build:ts": "tsc -p tsconfig.extension.json",
-    "build:ts:w": "tsc -p tsconfig.extension.json -w",
-    "build:web": "node scripts/build.js",
-    "build:production": "yarn clean && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
-    "vscode:prepublish": "yarn build:production",
-    "debug:build": "node --inspect-brk scripts/build.js",
-    "link-blink": "node scripts/blink.js --link",
-    "unlink-blink": "node scripts/blink.js --unlink"
-  },
-  "devDependencies": {
-    "@babel/core": "7.2.2",
-    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
-    "@svgr/webpack": "4.1.0",
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.1.2",
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "9.0.0",
-    "babel-jest": "23.6.0",
-    "babel-loader": "8.0.5",
-    "babel-plugin-named-asset-import": "^0.3.1",
-    "babel-preset-react-app": "^7.0.2",
-    "bfj": "6.1.1",
-    "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "commander": "^4.0.1",
-    "cross-env": "^6.0.3",
-    "css-loader": "1.0.0",
-    "dotenv": "6.0.0",
-    "dotenv-expand": "4.2.0",
-    "drop-console-webpack-plugin": "^3.0.2",
-    "eslint": "5.12.0",
-    "eslint-config-react-app": "^3.0.8",
-    "eslint-loader": "2.1.1",
-    "eslint-plugin-flowtype": "2.50.1",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.12.4",
-    "file-loader": "2.0.0",
-    "fs-extra": "7.0.1",
-    "html-webpack-plugin": "4.0.0-alpha.2",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "23.6.0",
-    "jest-pnp-resolver": "1.0.2",
-    "jest-resolve": "23.6.0",
-    "jest-watch-typeahead": "^0.2.1",
-    "mini-css-extract-plugin": "0.5.0",
-    "optimize-css-assets-webpack-plugin": "5.0.1",
-    "pnp-webpack-plugin": "1.2.1",
-    "postcss-flexbugs-fixes": "4.1.0",
-    "postcss-loader": "3.0.0",
-    "postcss-preset-env": "6.5.0",
-    "postcss-safe-parser": "4.0.1",
-    "prettier": "^1.19.1",
-    "react-app-polyfill": "^0.2.2",
-    "react-dev-utils": "^8.0.0",
-    "resolve": "1.10.0",
-    "rewire": "^4.0.1",
-    "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
-    "terser-webpack-plugin": "1.2.2",
-    "typescript": "^3.3.1",
-    "url-loader": "1.1.2",
-    "vsce": "^1.69.0",
-    "vscode": "^1.1.6",
-    "webpack": "4.28.3",
-    "webpack-dev-server": "3.1.14",
-    "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
-  },
-  "dependencies": {
-    "@blink-mind/core": "0.0.18",
-    "@blink-mind/icons": "0.0.18",
-    "@blink-mind/plugin-json-serializer": "0.0.18",
-    "@blink-mind/plugin-rich-text-editor": "0.0.18",
-    "@blink-mind/plugin-theme-selector": "0.0.18",
-    "@blink-mind/plugin-topic-reference": "0.0.18",
-    "@blink-mind/plugin-topology-diagram": "0.0.18",
-    "@blink-mind/renderer-react": "0.0.18",
-    "@blueprintjs/core": "^3.17.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "serialize-javascript": "^2.1.1"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "resolver": "jest-pnp-resolver",
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jsdom",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "/home/zhou/coding/awehook/vscode-blink-mind/node_modules/jest-watch-typeahead/filename.js",
-      "/home/zhou/coding/awehook/vscode-blink-mind/node_modules/jest-watch-typeahead/testname.js"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  }
+	"name": "vscode-blink-mind",
+	"displayName": "Vscode Blink Mind",
+	"description": "A mind map extention for vscode",
+	"version": "0.0.6",
+	"publisher": "awehook",
+	"author": "awehook(awehook@163.com)",
+	"license": "MIT",
+	"icon": "assets/icon.png",
+	"main": "./build/ext-src/extension.js",
+	"engines": {
+		"vscode": "^1.24.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"homepage": "https://github.com/awehook/vscode-blink-mind",
+	"keywords": [
+		"mindmap",
+		"mind",
+		"map",
+		"topology",
+		"flowchart",
+		"vscode",
+		"editor"
+	],
+	"activationEvents": [
+		"onLanguage:json",
+		"onLanguage:blinkmind",
+		"onCommand:vscode-blink-mind.start",
+		"onCommand:vscode-blink-mind.create-new-mindmap"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/awehook/vscode-blink-mind.git"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "blinkmind",
+				"extensions": [
+					".blinkmind",
+					".bm"
+				],
+				"aliases": [
+					"blinkmind",
+					"BLINKMIND"
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "vscode-blink-mind.start",
+				"title": "Start Mindmap editor session",
+				"category": "Mindmap editor"
+			},
+			{
+				"command": "vscode-blink-mind.create-new-mindmap",
+				"title": "Create new mindmap",
+				"category": "Mindmap editor"
+			}
+		]
+	},
+	"scripts": {
+		"package": "vsce package --yarn",
+		"clean": "rm -rf ./build",
+		"build": "yarn clean && yarn build:web && yarn build:ts",
+		"build:ts": "tsc -p tsconfig.extension.json",
+		"build:ts:w": "tsc -p tsconfig.extension.json -w",
+		"build:web": "node scripts/build.js",
+		"build:my": "cross-env ANALYZER=true node scripts/build.js",
+		"build:production": "yarn clean && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false node scripts/build.js && tsc -p tsconfig.extension.json",
+		"vscode:prepublish": "yarn build:production",
+		"debug:build": "node --inspect-brk scripts/build.js",
+		"up-blink": "node scripts/blink.js -u",
+		"link-blink": "node scripts/blink.js --link",
+		"unlink-blink": "node scripts/blink.js --unlink"
+	},
+	"devDependencies": {
+		"@babel/core": "7.2.2",
+		"@babel/helper-create-regexp-features-plugin": "^7.7.4",
+		"@svgr/webpack": "4.1.0",
+		"@types/jest": "^23.3.13",
+		"@types/node": "^10.1.2",
+		"@types/react": "^16.3.14",
+		"@types/react-dom": "^16.0.5",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-eslint": "9.0.0",
+		"babel-jest": "23.6.0",
+		"babel-loader": "8.0.5",
+		"babel-plugin-named-asset-import": "^0.3.1",
+		"babel-preset-react-app": "^7.0.2",
+		"bfj": "6.1.1",
+		"case-sensitive-paths-webpack-plugin": "2.2.0",
+		"commander": "^4.0.1",
+		"cross-env": "^6.0.3",
+		"css-loader": "1.0.0",
+		"dotenv": "6.0.0",
+		"dotenv-expand": "4.2.0",
+		"drop-console-webpack-plugin": "^3.0.2",
+		"eslint": "5.12.0",
+		"eslint-config-react-app": "^3.0.8",
+		"eslint-loader": "2.1.1",
+		"eslint-plugin-flowtype": "2.50.1",
+		"eslint-plugin-import": "2.14.0",
+		"eslint-plugin-jsx-a11y": "6.1.2",
+		"eslint-plugin-react": "7.12.4",
+		"file-loader": "2.0.0",
+		"fs-extra": "7.0.1",
+		"html-webpack-plugin": "4.0.0-alpha.2",
+		"identity-obj-proxy": "3.0.0",
+		"jest": "23.6.0",
+		"jest-pnp-resolver": "1.0.2",
+		"jest-resolve": "23.6.0",
+		"jest-watch-typeahead": "^0.2.1",
+		"mini-css-extract-plugin": "0.5.0",
+		"optimize-css-assets-webpack-plugin": "5.0.1",
+		"pnp-webpack-plugin": "1.2.1",
+		"postcss-flexbugs-fixes": "4.1.0",
+		"postcss-loader": "3.0.0",
+		"postcss-preset-env": "6.5.0",
+		"postcss-safe-parser": "4.0.1",
+		"prettier": "^1.19.1",
+		"react-app-polyfill": "^0.2.2",
+		"react-dev-utils": "^8.0.0",
+		"resolve": "1.10.0",
+		"rewire": "^4.0.1",
+		"sass-loader": "7.1.0",
+		"style-loader": "0.23.1",
+		"terser-webpack-plugin": "1.2.2",
+		"typescript": "^3.3.1",
+		"url-loader": "1.1.2",
+		"vsce": "^1.69.0",
+		"vscode": "^1.1.6",
+		"webpack": "4.28.3",
+		"webpack-bundle-analyzer": "^3.6.0",
+		"webpack-dev-server": "3.1.14",
+		"webpack-manifest-plugin": "2.0.4",
+		"workbox-webpack-plugin": "3.6.3"
+	},
+	"dependencies": {
+		"@blink-mind/core": "0.0.19-beta.0",
+		"@blink-mind/icons": "0.0.19-beta.0",
+		"@blink-mind/plugin-json-serializer": "0.0.19-beta.0",
+		"@blink-mind/plugin-rich-text-editor": "0.0.19-beta.0",
+		"@blink-mind/plugin-theme-selector": "0.0.19-beta.0",
+		"@blink-mind/plugin-topic-reference": "0.0.19-beta.0",
+		"@blink-mind/plugin-topology-diagram": "0.0.19-beta.0",
+		"@blink-mind/renderer-react": "0.0.19-beta.0",
+		"@blueprintjs/core": "^3.17.2",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
+		"serialize-javascript": "^2.1.1"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!src/**/*.d.ts"
+		],
+		"resolver": "jest-pnp-resolver",
+		"setupFiles": [
+			"react-app-polyfill/jsdom"
+		],
+		"testMatch": [
+			"<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+			"<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+		],
+		"testEnvironment": "jsdom",
+		"testURL": "http://localhost",
+		"transform": {
+			"^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+			"^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+			"^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+		},
+		"transformIgnorePatterns": [
+			"[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+			"^.+\\.module\\.(css|sass|scss)$"
+		],
+		"moduleNameMapper": {
+			"^react-native$": "react-native-web",
+			"^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+		},
+		"moduleFileExtensions": [
+			"web.js",
+			"js",
+			"web.ts",
+			"ts",
+			"web.tsx",
+			"tsx",
+			"json",
+			"web.jsx",
+			"jsx",
+			"node"
+		],
+		"watchPlugins": [
+			"/home/zhou/coding/awehook/vscode-blink-mind/node_modules/jest-watch-typeahead/filename.js",
+			"/home/zhou/coding/awehook/vscode-blink-mind/node_modules/jest-watch-typeahead/testname.js"
+		]
+	},
+	"babel": {
+		"presets": [
+			"react-app"
+		]
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	}
 }

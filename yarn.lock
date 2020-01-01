@@ -953,97 +953,94 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@blink-mind/core@0.0.18", "@blink-mind/core@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.18.tgz#a84859f02b9f3c37f5af7987b19cd3c10b23fbd9"
-  integrity sha1-qEhZ8CufPDf1r3mHsZzTwQsj+9k=
+"@blink-mind/core@0.0.19-beta.0", "@blink-mind/core@^0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/core/download/@blink-mind/core-0.0.19-beta.0.tgz#bd0e61fb8a3baef7bf22c5e3d712247564a61e03"
+  integrity sha1-vQ5h+4o7rve/IsXj1xIkdWSmHgM=
   dependencies:
-    debug "^3.1.0"
+    debug "2.6.9"
     immutable "^4.0.0-rc.12"
     is-plain-object "^3.0.0"
     memoize-one "^5.1.1"
     tiny-warning "^1.0.3"
 
-"@blink-mind/icons@0.0.18", "@blink-mind/icons@^0.0.18":
+"@blink-mind/icons@0.0.19-beta.0", "@blink-mind/icons@^0.0.18":
   version "0.0.18"
   resolved "https://registry.npm.taobao.org/@blink-mind/icons/download/@blink-mind/icons-0.0.18.tgz#3d7c3acf9bb8cc888234f507921c2c72fccbfdcc"
   integrity sha1-PXw6z5u4zIiCNPUHkhwscvzL/cw=
 
-"@blink-mind/plugin-json-serializer@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-json-serializer/download/@blink-mind/plugin-json-serializer-0.0.18.tgz#ee3c491b21b392179d19addecd5ba7f45bbf91a7"
-  integrity sha1-7jxJGyGzkhedGa3ezVun9Fu/kac=
+"@blink-mind/plugin-json-serializer@0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-json-serializer/download/@blink-mind/plugin-json-serializer-0.0.19-beta.0.tgz#b1463b2f633159492cbc20f713653f613f935903"
+  integrity sha1-sUY7L2MxWUksvCD3E2U/YT+TWQM=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
 
-"@blink-mind/plugin-rich-text-editor@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-rich-text-editor/download/@blink-mind/plugin-rich-text-editor-0.0.18.tgz#11df89509fc904993862b6e4b0f6c90afb178ff8"
-  integrity sha1-Ed+JUJ/JBJk4YrbksPbJCvsXj/g=
+"@blink-mind/plugin-rich-text-editor@0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-rich-text-editor/download/@blink-mind/plugin-rich-text-editor-0.0.19-beta.0.tgz#2927cef892c62f08564e2a871986ef77eaba3e1c"
+  integrity sha1-KSfO+JLGLwhWTiqHGYbvd+q6Phw=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
-    "@blink-mind/renderer-react" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
+    "@blink-mind/renderer-react" "^0.0.19-beta.0"
     awehook-rich-markdown-editor "^1.0.1"
     slate-md-serializer "^5.4.4"
 
-"@blink-mind/plugin-simple-text-editor@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-simple-text-editor/download/@blink-mind/plugin-simple-text-editor-0.0.18.tgz#df1e1b960e031fcb3fe820e367d0f53cd967bb7f"
-  integrity sha1-3x4blg4DH8s/6CDjZ9D1PNlnu38=
+"@blink-mind/plugin-simple-text-editor@^0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-simple-text-editor/download/@blink-mind/plugin-simple-text-editor-0.0.19-beta.0.tgz#85501ea7da3a02440096eeef67e0bfbdd55cb03f"
+  integrity sha1-hVAep9o6AkQAlu7vZ+C/vdVcsD8=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
     slate-plain-serializer "^0.7.11"
     slate-react "^0.21.20"
 
-"@blink-mind/plugin-theme-selector@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-theme-selector/download/@blink-mind/plugin-theme-selector-0.0.18.tgz#47586bc0f4efbc0e34e18ddc19e7138d7819ad45"
-  integrity sha1-R1hrwPTvvA404Y3cGecTjXgZrUU=
+"@blink-mind/plugin-theme-selector@0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-theme-selector/download/@blink-mind/plugin-theme-selector-0.0.19-beta.0.tgz#bcf532210eb24b2a996055b46c74a00e03a2a72c"
+  integrity sha1-vPUyIQ6ySyqZYFW0bHSgDgOipyw=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
-    "@blink-mind/renderer-react" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
+    "@blink-mind/renderer-react" "^0.0.19-beta.0"
 
-"@blink-mind/plugin-topic-reference@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topic-reference/download/@blink-mind/plugin-topic-reference-0.0.18.tgz#5805218b9bf14a80cbf3ce900f4e6310c7edde0c"
-  integrity sha1-WAUhi5vxSoDL886QD05jEMft3gw=
+"@blink-mind/plugin-topic-reference@0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topic-reference/download/@blink-mind/plugin-topic-reference-0.0.19-beta.0.tgz#27070fb2f3cd91e24566d001e72779af5fdf3ce4"
+  integrity sha1-JwcPsvPNkeJFZtAB5yd5r1/fPOQ=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
     "@blink-mind/icons" "^0.0.18"
-    "@blink-mind/renderer-react" "^0.0.18"
+    "@blink-mind/renderer-react" "^0.0.19-beta.0"
 
-"@blink-mind/plugin-topology-diagram@0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topology-diagram/download/@blink-mind/plugin-topology-diagram-0.0.18.tgz#30295b98395603b9f840f8827adbcd2264945a01"
-  integrity sha1-MClbmDlWA7n4QPiCetvNImSUWgE=
+"@blink-mind/plugin-topology-diagram@0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/plugin-topology-diagram/download/@blink-mind/plugin-topology-diagram-0.0.19-beta.0.tgz#cd4edca06ff6138cfb6e6b64bfe881682ef8e701"
+  integrity sha1-zU7coG/2E4z7bmtkv+iBaC745wE=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
     "@blink-mind/icons" "^0.0.18"
-    "@blink-mind/renderer-react" "^0.0.18"
+    "@blink-mind/renderer-react" "^0.0.19-beta.0"
     topology-activity-diagram "^0.0.6"
     topology-class-diagram "^0.0.4"
     topology-core "^0.1.2"
     topology-flow-diagram "^0.0.3"
     topology-sequence-diagram "^0.0.6"
 
-"@blink-mind/renderer-react@0.0.18", "@blink-mind/renderer-react@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/@blink-mind/renderer-react/download/@blink-mind/renderer-react-0.0.18.tgz#9a2ed3e2b21ac0e9906892abb96732444c0d21cc"
-  integrity sha1-mi7T4rIawOmQaJKruWcyREwNIcw=
+"@blink-mind/renderer-react@0.0.19-beta.0", "@blink-mind/renderer-react@^0.0.19-beta.0":
+  version "0.0.19-beta.0"
+  resolved "https://registry.npm.taobao.org/@blink-mind/renderer-react/download/@blink-mind/renderer-react-0.0.19-beta.0.tgz#976d6a3eb53082a7911c962534ffb66b0794f1eb"
+  integrity sha1-l21qPrUwgqeRHJYlNP+2aweU8es=
   dependencies:
-    "@blink-mind/core" "^0.0.18"
+    "@blink-mind/core" "^0.0.19-beta.0"
     "@blink-mind/icons" "^0.0.18"
-    "@blink-mind/plugin-simple-text-editor" "^0.0.18"
+    "@blink-mind/plugin-simple-text-editor" "^0.0.19-beta.0"
     "@blueprintjs/core" "^3.19.1"
     "@blueprintjs/select" "^3.11.1"
     classnames "^2.2.6"
-    debug "^3.1.0"
     immutable "^4.0.0-rc.12"
     lodash "^4.17.15"
     memoize-one "^5.1.1"
-    react "^16.10.2"
     react-color "^2.17.3"
-    react-dom "^16.10.2"
     resize-observer-polyfill "^1.5.1"
     styled-components "^4.4.0"
     tiny-invariant "^1.0.6"
@@ -1504,7 +1501,7 @@ acorn-jsx@^5.0.0:
   resolved "https://registry.npm.taobao.org/acorn-jsx/download/acorn-jsx-5.1.0.tgz?cache=0&sync_timestamp=1570991888898&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Facorn-jsx%2Fdownload%2Facorn-jsx-5.1.0.tgz#294adb71b57398b0680015f0a38c563ee1db5384"
   integrity sha1-KUrbcbVzmLBoABXwo4xWPuHbU4Q=
 
-acorn-walk@^6.0.1:
+acorn-walk@^6.0.1, acorn-walk@^6.1.1:
   version "6.2.0"
   resolved "https://registry.npm.taobao.org/acorn-walk/download/acorn-walk-6.2.0.tgz#123cb8f3b84c2171f1f7fb252615b1c78a6b1a8c"
   integrity sha1-Ejy487hMIXHx9/slJhWxx4prGow=
@@ -2279,6 +2276,16 @@ bfj@6.1.1:
     hoopy "^0.1.2"
     tryer "^1.0.0"
 
+bfj@^6.1.1:
+  version "6.1.2"
+  resolved "https://registry.npm.taobao.org/bfj/download/bfj-6.1.2.tgz#325c861a822bcb358a41c78a33b8e6e2086dde7f"
+  integrity sha1-MlyGGoIryzWKQceKM7jm4ght3n8=
+  dependencies:
+    bluebird "^3.5.5"
+    check-types "^8.0.3"
+    hoopy "^0.1.4"
+    tryer "^1.0.1"
+
 big.js@^5.2.2:
   version "5.2.2"
   resolved "https://registry.npm.taobao.org/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
@@ -2720,6 +2727,11 @@ check-types@^7.3.0:
   resolved "https://registry.npm.taobao.org/check-types/download/check-types-7.4.0.tgz?cache=0&sync_timestamp=1571636874740&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcheck-types%2Fdownload%2Fcheck-types-7.4.0.tgz#0378ec1b9616ec71f774931a3c6516fad8c152f4"
   integrity sha1-A3jsG5YW7HH3dJMaPGUW+tjBUvQ=
 
+check-types@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.npm.taobao.org/check-types/download/check-types-8.0.3.tgz?cache=0&sync_timestamp=1577112099852&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcheck-types%2Fdownload%2Fcheck-types-8.0.3.tgz#3356cca19c889544f2d7a95ed49ce508a0ecf552"
+  integrity sha1-M1bMoZyIlUTy16le1JzlCKDs9VI=
+
 cheerio@^1.0.0-rc.1:
   version "1.0.0-rc.3"
   resolved "https://registry.npm.taobao.org/cheerio/download/cheerio-1.0.0-rc.3.tgz#094636d425b2e9c0f4eb91a46c05630c9a1a8bf6"
@@ -2931,7 +2943,7 @@ commander@2.17.x:
   resolved "https://registry.npm.taobao.org/commander/download/commander-2.17.1.tgz?cache=0&sync_timestamp=1573464028535&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
   integrity sha1-vXerfebelCBc6sxy8XFtKfIKd78=
 
-commander@^2.11.0, commander@^2.19.0, commander@^2.20.0, commander@^2.8.1, commander@~2.20.3:
+commander@^2.11.0, commander@^2.18.0, commander@^2.19.0, commander@^2.20.0, commander@^2.8.1, commander@~2.20.3:
   version "2.20.3"
   resolved "https://registry.npm.taobao.org/commander/download/commander-2.20.3.tgz?cache=0&sync_timestamp=1573464028535&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=
@@ -3866,6 +3878,11 @@ ee-first@1.1.1:
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+ejs@^2.6.1:
+  version "2.7.4"
+  resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.7.4.tgz#48661287573dcc53e366c7a1ae52c3a120eec9ba"
+  integrity sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
+
 electron-to-chromium@^1.3.103, electron-to-chromium@^1.3.306:
   version "1.3.314"
   resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.314.tgz#c186a499ed2c9057bce9eb8dca294d6d5450facc"
@@ -4393,7 +4410,7 @@ expect@^23.6.0:
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
 
-express@^4.16.2:
+express@^4.16.2, express@^4.16.3:
   version "4.17.1"
   resolved "https://registry.npm.taobao.org/express/download/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha1-RJH8OGBc9R+GKdOcK10Cb5ikwTQ=
@@ -4609,7 +4626,7 @@ fileset@^2.0.2:
     glob "^7.0.3"
     minimatch "^3.0.3"
 
-filesize@3.6.1:
+filesize@3.6.1, filesize@^3.6.1:
   version "3.6.1"
   resolved "https://registry.npm.taobao.org/filesize/download/filesize-3.6.1.tgz?cache=0&sync_timestamp=1573255715350&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffilesize%2Fdownload%2Ffilesize-3.6.1.tgz#090bb3ee01b6f801a8a8be99d31710b3422bb317"
   integrity sha1-CQuz7gG2+AGoqL6Z0xcQs0Irsxc=
@@ -5054,6 +5071,14 @@ gzip-size@5.0.0:
     duplexer "^0.1.1"
     pify "^3.0.0"
 
+gzip-size@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.npm.taobao.org/gzip-size/download/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
+  integrity sha1-y5vuaS+HwGErIyhAqHOQTkwTUnQ=
+  dependencies:
+    duplexer "^0.1.1"
+    pify "^4.0.1"
+
 handle-thing@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/handle-thing/download/handle-thing-2.0.0.tgz#0e039695ff50c93fc288557d696f3c1dc6776754"
@@ -5211,7 +5236,7 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-hoopy@^0.1.2:
+hoopy@^0.1.2, hoopy@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npm.taobao.org/hoopy/download/hoopy-0.1.4.tgz#609207d661100033a9a9402ad3dea677381c1b1d"
   integrity sha1-YJIH1mEQADOpqUAq096mdzgcGx0=
@@ -7641,6 +7666,11 @@ onetime@^2.0.0:
   integrity sha1-BnQoIw/WdEOyeUsiu6UotoZ5YtQ=
   dependencies:
     mimic-fn "^1.0.0"
+
+opener@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.npm.taobao.org/opener/download/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
+  integrity sha1-bS8Od/GgrwAyrKcWwsH7uOfoq+0=
 
 opn@5.4.0:
   version "5.4.0"
@@ -10764,7 +10794,7 @@ trim-right@^1.0.1:
   resolved "https://registry.npm.taobao.org/trim-right/download/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-tryer@^1.0.0:
+tryer@^1.0.0, tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha1-8shUBoALmw90yfdGW4HqrSQSUvg=
@@ -11183,6 +11213,25 @@ webidl-conversions@^4.0.2:
   resolved "https://registry.npm.taobao.org/webidl-conversions/download/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
   integrity sha1-qFWYCx8LazWbodXZ+zmulB+qY60=
 
+webpack-bundle-analyzer@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npm.taobao.org/webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.6.0.tgz#39b3a8f829ca044682bc6f9e011c95deb554aefd"
+  integrity sha1-ObOo+CnKBEaCvG+eARyV3rVUrv0=
+  dependencies:
+    acorn "^6.0.7"
+    acorn-walk "^6.1.1"
+    bfj "^6.1.1"
+    chalk "^2.4.1"
+    commander "^2.18.0"
+    ejs "^2.6.1"
+    express "^4.16.3"
+    filesize "^3.6.1"
+    gzip-size "^5.0.0"
+    lodash "^4.17.15"
+    mkdirp "^0.5.1"
+    opener "^1.5.1"
+    ws "^6.0.0"
+
 webpack-dev-middleware@3.4.0:
   version "3.4.0"
   resolved "https://registry.npm.taobao.org/webpack-dev-middleware/download/webpack-dev-middleware-3.4.0.tgz#1132fecc9026fd90f0ecedac5cbff75d1fb45890"
@@ -11536,6 +11585,13 @@ ws@^5.2.0:
   version "5.2.2"
   resolved "https://registry.npm.taobao.org/ws/download/ws-5.2.2.tgz?cache=0&sync_timestamp=1571495321314&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fws%2Fdownload%2Fws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
   integrity sha1-3/7xSGa46NyRM1glFNG++vlumA8=
+  dependencies:
+    async-limiter "~1.0.0"
+
+ws@^6.0.0:
+  version "6.2.1"
+  resolved "https://registry.npm.taobao.org/ws/download/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
+  integrity sha1-RC/fCkftZPWbal2P8TD0dI7VJPs=
   dependencies:
     async-limiter "~1.0.0"
 
