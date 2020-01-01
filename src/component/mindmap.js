@@ -3,7 +3,7 @@ import { Diagram } from '@blink-mind/renderer-react';
 import RichTextEditorPlugin from '@blink-mind/plugin-rich-text-editor';
 import { JsonSerializerPlugin } from '@blink-mind/plugin-json-serializer';
 import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
-import TopologyDiagramPlugin from '@blink-mind/plugin-topology-diagram'
+import TopologyDiagramPlugin from '@blink-mind/plugin-topology-diagram';
 import TopicReferencePlugin from '@blink-mind/plugin-topic-reference';
 import { Toolbar } from './toolbar/toolbar';
 import { generateSimpleModel } from '../utils';
@@ -18,7 +18,7 @@ const plugins = [
   ThemeSelectorPlugin(),
   TopicReferencePlugin(),
   TopologyDiagramPlugin(),
-  JsonSerializerPlugin(),
+  JsonSerializerPlugin()
 ];
 
 export class Mindmap extends React.Component {
@@ -32,17 +32,41 @@ export class Mindmap extends React.Component {
     window.addEventListener('message', event => {
       const message = event.data; // The JSON data our extension sent
       if (!message || message === '') return;
-      const obj = JSON.parse(message.model);
-      const props = this.diagram.getDiagramProps();
-      const { controller } = props;
-      const model = controller.run('deserializeModel', { controller, obj });
-      this.diagram.openNewModel(model);
+      switch (message.type) {
+        case 'doc-change':
+          this.handleMsgDocChange(message);
+          break;
+      }
     });
   }
+
+  handleMsgDocChange(message) {
+    console.log('handleMsgDocChange');
+    const obj = JSON.parse(message.model);
+    const props = this.diagram.getDiagramProps();
+    const { controller } = props;
+    const model = controller.run('deserializeModel', { controller, obj });
+    this.diagram.openNewModel(model);
+  }
+
   componentDidMount() {
     window.vscode.postMessage({
       command: 'loaded'
     });
+    this.setUpPersistence();
+  }
+
+  setUpPersistence() {
+    setInterval(() => {
+      const diagramProps = this.diagram.getDiagramProps();
+      const { controller } = diagramProps;
+      const json = controller.run('serializeModel', diagramProps);
+      const jsonStr = JSON.stringify(json, null, 2);
+      window.vscode.postMessage({
+        command: 'auto-save',
+        data: jsonStr
+      });
+    }, 1000);
   }
 
   diagram;

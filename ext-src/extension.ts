@@ -63,3 +63,11 @@ export function activate(context: vscode.ExtensionContext): void {
   context.subscriptions.push(startCommand);
   context.subscriptions.push(createNewMindMapCommand);
 }
+
+export function deactivate(context: vscode.ExtensionContext) {
+  const promises : Promise<any>[] = [];
+  BlinkMindPanel.openedPanels.forEach((panel)=>{
+    promises.push(panel.writeAutoSaveDataToDisk());
+  })
+  return Promise.all(promises);
+}

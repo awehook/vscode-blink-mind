@@ -39,8 +39,13 @@ export class BlinkMindPanel {
     this._webViewPanel.webview.onDidReceiveMessage(this.webViewMsgHandler);
 
     // vscode.workspace.onDidSaveTextDocument(() => this.onDocumentChanged());
-    vscode.window.onDidChangeActiveTextEditor(() => this.onDocumentChanged());
+    // why? ActiveTextEditor
+    vscode.window.onDidChangeActiveTextEditor(() => {
+      console.log('onDidChangeActiveTextEditor');
+      // !this._isDispose && this.onDocumentChanged();
+    });
 
+    // 注意这里是在_webViewPanel的onDidDispose里调用this.dispose()
     this._webViewPanel.onDidDispose(
       () => this.dispose(),
       null,
@@ -48,11 +53,16 @@ export class BlinkMindPanel {
     );
   }
 
+  private _autoSaveData: any;
+
   private webViewMsgHandler = message => {
-    // console.log('webViewMsgHandler', message);
+    // console.log('webViewMsgHandler', message.command);
     switch (message.command) {
       case 'save':
-        writeFileToDisk(this._filePath, message.data);
+        writeFileToDisk(this._filePath, message.data, true);
+        break;
+      case 'auto-save':
+        this._autoSaveData = message.data;
         break;
       case 'loaded':
         this.onDocumentChanged();
@@ -61,12 +71,14 @@ export class BlinkMindPanel {
   };
 
   private onDocumentChanged() {
-    // console.log('onDocumentChanged');
-    const json: string = this.getJson();
-    const obj = { model: json };
-    const data = JSON.stringify(obj);
-    // console.log('postMessage:', obj);
-    this._webViewPanel.webview.postMessage(obj);
+    if (this._webViewPanel && this._webViewPanel.webview) {
+      // console.log('onDocumentChanged');
+      const json: string = this.getJson();
+      const obj = { type: 'doc-change', model: json };
+      const data = JSON.stringify(obj);
+      // console.log('postMessage:', obj);
+      this._webViewPanel.webview.postMessage(obj);
+    }
   }
 
   private getJson(): string {
@@ -136,9 +148,15 @@ export class BlinkMindPanel {
     return html;
   }
 
-  public dispose() {
-    BlinkMindPanel.openedPanels.delete(this._filePath);
+  public writeAutoSaveDataToDisk() : Promise<any> {
+    console.log('writeAutoSaveDataToDisk');
+    return writeFileToDisk(this._filePath, this._autoSaveData, false);
+  }
 
+  public dispose() {
+    console.log('blink-mind-panel dispose');
+    this.writeAutoSaveDataToDisk();
+    BlinkMindPanel.openedPanels.delete(this._filePath);
     this._webViewPanel.dispose();
     while (this._disposables.length) {
       const x = this._disposables.pop();
