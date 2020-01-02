@@ -14,6 +14,13 @@
 [vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is a extention for create and editing mind map in vscode.
 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/webpack-mindmap.png)
+
+# Change Logs
+## v0.0.7
+- Auto save documents when close the editor panel or exit vscode.
+- When editing the topic content, press ctrl + enter will complete the editing.
+- Every topic can reference other topics by click the context menu: Set Reference Topics, then select the topics that you want to reference, then click the confirm button. If a topic has some reference topics, you can click the reference icon to open the reference list panel.In the reference list panel, you can navigate to any reference topic just by click it. You also can remove the reference by click remove button.
+
 # Features
 
 - Infinite canvas size for mind map editing.
