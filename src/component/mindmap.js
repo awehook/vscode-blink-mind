@@ -47,13 +47,13 @@ export class Mindmap extends React.Component {
     const { controller } = props;
     const model = controller.run('deserializeModel', { controller, obj });
     this.diagram.openNewModel(model);
+    this.setUpPersistence();
   }
 
   componentDidMount() {
     window.vscode.postMessage({
       command: 'loaded'
     });
-    this.setUpPersistence();
   }
 
   setUpPersistence() {

@@ -28,6 +28,7 @@ export function activate(context: vscode.ExtensionContext): void {
   vscode.workspace.onDidOpenTextDocument(doc => {
     const fullname = doc.fileName;
     const extName = path.extname(fullname).slice(1);
+    console.log('onDidOpenTextDocument',fullname,extName);
     if (!matchableFileTypes.includes(extName)) return;
     vscode.commands.executeCommand('vscode-blink-mind.start', doc);
   });

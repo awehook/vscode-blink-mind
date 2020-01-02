@@ -27,6 +27,8 @@ export class BlinkMindPanel {
       'Mindmap Editor ' + this._filePath,
       column,
       {
+        //TODO 对于具有非常复杂的UI或状态且无法快速保存和恢复的webview，我们可以直接使用retainContextWhenHidden选项
+        retainContextWhenHidden: true,
         enableScripts: true,
         localResourceRoots: [
           vscode.Uri.file(path.join(this._extentionPath, 'build'))
@@ -42,7 +44,6 @@ export class BlinkMindPanel {
     // why? ActiveTextEditor
     vscode.window.onDidChangeActiveTextEditor(() => {
       console.log('onDidChangeActiveTextEditor');
-      // !this._isDispose && this.onDocumentChanged();
     });
 
     // 注意这里是在_webViewPanel的onDidDispose里调用this.dispose()
@@ -64,6 +65,7 @@ export class BlinkMindPanel {
       case 'auto-save':
         this._autoSaveData = message.data;
         break;
+      // TODO 有没有办法直接把数据初始化到webview中
       case 'loaded':
         this.onDocumentChanged();
         break;
@@ -75,7 +77,6 @@ export class BlinkMindPanel {
       // console.log('onDocumentChanged');
       const json: string = this.getJson();
       const obj = { type: 'doc-change', model: json };
-      const data = JSON.stringify(obj);
       // console.log('postMessage:', obj);
       this._webViewPanel.webview.postMessage(obj);
     }
