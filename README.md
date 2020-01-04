@@ -16,6 +16,10 @@
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/webpack-mindmap.png)
 
 # Change Logs
+
+## v0.0.8
+- Search topic by press Ctrl+F or click the search toolbar menu. 
+
 ## v0.0.7
 - This is a beta version, that means it could be unstable. But it provide a powerful feature: Topic can reference each other. Every topic can reference other topics by click the context menu: Set Reference Topics, then select the topics that you want to reference, then click the confirm button. If a topic has some reference topics, you can click the reference icon to open the reference list panel.In the reference list panel, you can navigate to any reference topic just by click it. You also can remove the reference by click remove button.
 - Auto save documents when close the editor panel or exit vscode.
@@ -27,6 +31,11 @@
 - Markdown editor for topic and topic notes. 
 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/rich-mark-down-editor.png)
+
+- Search topic.
+
+![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/search-topic.png)
+
 - HotKey support. 
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/hotkey.png)
@@ -34,12 +43,15 @@
 - Reorganize the diagram by drag and drop. 
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/drag-and-drop.png)
+
 - Multiple theme. 
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/blink-mind-theme.png)
+
 - Every topic's style include font style, border style, link style can be customize. 
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/style-editor.png)
+
 - Focus Mode, Any topic can be used as the root node of the diagram.You can navigate by the breadcrumbs. 
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/focus-mode.png)

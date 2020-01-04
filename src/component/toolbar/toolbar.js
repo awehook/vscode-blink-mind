@@ -7,6 +7,7 @@ import { iconClassName } from '@blink-mind/renderer-react';
 import { ToolbarItemLayout } from './toolbar-item-layout';
 import { ToolbarItemTheme } from './toolbar-item-theme';
 import { ToolbarItemSave } from './toolbar-item-save';
+import { ToolbarItemSearch } from './toolbar-item-search';
 
 // import debug from "debug";
 // const log = debug("app");
@@ -35,6 +36,7 @@ export class Toolbar extends React.PureComponent {
         {ToolbarItemSave(props)}
         {ToolbarItemTheme(props)}
         {ToolbarItemLayout(props)}
+        {ToolbarItemSearch(props)}
 
         <div
           className={cx('bm-toolbar-item', iconClassName('undo'), {
