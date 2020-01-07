@@ -17,6 +17,10 @@
 
 # Change Logs
 
+## v0.0.9
+- Theme editor: now theme can be customized.
+- Remember the location of the last focused topic and when reopen the mindmap it will navigate to the last location.
+
 ## v0.0.8
 - Search topic by press Ctrl+F or click the search toolbar menu. 
 

@@ -151,10 +151,13 @@ export class Mindmap extends React.Component {
     return <Toolbar {...toolbarProps} />;
   }
 
-  onChange = model => {
-    this.setState({
-      model
-    });
+  onChange = (model, callback) => {
+    this.setState(
+      {
+        model
+      },
+      callback
+    );
   };
 
   render() {
