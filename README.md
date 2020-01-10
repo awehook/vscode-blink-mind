@@ -17,6 +17,10 @@
 
 # Change Logs
 
+## v0.0.10
+- Tags manager: now topic can add tags.
+- Improve user experience: navigate to topic will move topic to the left center of the viewbox instead of the center of the viewbox.
+
 ## v0.0.9
 - Theme editor: now theme can be customized.
 - Remember the location of the last focused topic and when reopen the mindmap it will navigate to the last location.
@@ -48,7 +52,7 @@
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/drag-and-drop.png)
 
-- Multiple theme. 
+- Multiple theme and theme editor.
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/blink-mind-theme.png)
 

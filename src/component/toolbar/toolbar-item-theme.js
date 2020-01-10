@@ -3,17 +3,19 @@ import theme1Img from '../../images/theme1.jpg';
 import theme2Img from '../../images/theme2.jpg';
 import theme3Img from '../../images/theme3.jpg';
 import theme4Img from '../../images/theme4.jpg';
-import cx from 'classnames';
-import { iconClassName } from '@blink-mind/renderer-react';
+import {
+  iconClassName,
+  ToolbarItem,
+  IconName,
+  ToolbarItemPopoverTarget
+} from '@blink-mind/renderer-react';
 import { Popover } from '@blueprintjs/core';
 import React from 'react';
 
 export function ToolbarItemTheme(props) {
   const onClickSetTheme = themeKey => e => {
-    const { diagram } = props;
-    const diagramProps = diagram.getDiagramProps();
-    const { controller } = diagramProps;
-    controller.run('setTheme', { ...diagramProps, themeKey });
+    const { controller } = props;
+    controller.run('setTheme', { ...props, themeKey });
   };
   const themes = [
     ['default', defaultThemeImg],
@@ -24,9 +26,9 @@ export function ToolbarItemTheme(props) {
   ];
 
   return (
-    <div className={cx('bm-toolbar-item', iconClassName('theme'))}>
+    <ToolbarItem className={iconClassName(IconName.THEME)}>
       <Popover enforceFocus={false}>
-        <div className="bm-toolbar-popover-target" />
+      <ToolbarItemPopoverTarget />
         <div className="bm-popover-theme">
           {themes.map(theme => (
             <div className="bm-theme-item" onClick={onClickSetTheme(theme[0])}>
@@ -35,6 +37,6 @@ export function ToolbarItemTheme(props) {
           ))}
         </div>
       </Popover>
-    </div>
+    </ToolbarItem>
   );
 }

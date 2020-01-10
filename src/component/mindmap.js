@@ -4,8 +4,13 @@ import RichTextEditorPlugin from '@blink-mind/plugin-rich-text-editor';
 import { JsonSerializerPlugin } from '@blink-mind/plugin-json-serializer';
 import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
 import TopologyDiagramPlugin from '@blink-mind/plugin-topology-diagram';
-import { TopicReferencePlugin, SearchPlugin } from '@blink-mind/plugins';
-import { Toolbar } from './toolbar/toolbar';
+import {
+  TopicReferencePlugin,
+  SearchPlugin,
+  UndoRedoPlugin,
+  TagsPlugin
+} from '@blink-mind/plugins';
+import { ToolbarPlugin } from './toolbar';
 import { generateSimpleModel } from '../utils';
 import '@blink-mind/renderer-react/lib/main.css';
 import '@blink-mind/plugins/lib/main.css';
@@ -15,10 +20,13 @@ const log = debug('app');
 const vscode = acquireVsCodeApi(); // eslint-disable-line no-undef
 
 const plugins = [
+  ToolbarPlugin(),
   RichTextEditorPlugin(),
   ThemeSelectorPlugin(),
   TopicReferencePlugin(),
   SearchPlugin(),
+  UndoRedoPlugin(),
+  TagsPlugin(),
   TopologyDiagramPlugin(),
   JsonSerializerPlugin()
 ];
@@ -88,42 +96,6 @@ export class Mindmap extends React.Component {
     this.state = { model };
   }
 
-  onClickOpenFile = e => {
-    const input = document.createElement('input');
-    const props = this.diagram.getDiagramProps();
-    const { controller } = props;
-    input.type = 'file';
-    input.accept = '.json';
-    log('add onchange');
-    input.addEventListener('change', evt => {
-      const file = evt.target.files[0];
-      const fr = new FileReader();
-      log('add fr onload');
-      fr.onload = evt => {
-        const txt = evt.target.result;
-        let obj = JSON.parse(txt);
-        log('OpenFile:', obj);
-        let model = controller.run('deserializeModel', { controller, obj });
-        log('OpenFile:', model);
-        this.setState({ model });
-      };
-      fr.readAsText(file);
-    });
-    input.click();
-  };
-
-  onClickUndo = e => {
-    const props = this.diagram.getDiagramProps();
-    const { controller } = props;
-    controller.run('undo', props);
-  };
-
-  onClickRedo = e => {
-    const props = this.diagram.getDiagramProps();
-    const { controller } = props;
-    controller.run('redo', props);
-  };
-
   renderDiagram() {
     return (
       <Diagram
@@ -133,22 +105,6 @@ export class Mindmap extends React.Component {
         plugins={plugins}
       />
     );
-  }
-
-  renderToolbar() {
-    const props = this.diagram.getDiagramProps();
-    const { controller } = props;
-    const canUndo = controller.run('canUndo', props);
-    const canRedo = controller.run('canRedo', props);
-    const toolbarProps = {
-      onClickOpenFile: this.onClickOpenFile,
-      onClickUndo: this.onClickUndo,
-      onClickRedo: this.onClickRedo,
-      canUndo,
-      canRedo,
-      diagram: this.diagram
-    };
-    return <Toolbar {...toolbarProps} />;
   }
 
   onChange = (model, callback) => {
@@ -161,12 +117,7 @@ export class Mindmap extends React.Component {
   };
 
   render() {
-    return (
-      <div className="mindmap">
-        {this.diagram && this.renderToolbar()}
-        {this.renderDiagram()}
-      </div>
-    );
+    return <div className="mindmap">{this.renderDiagram()}</div>;
   }
 }
 

@@ -2,7 +2,7 @@
 	"name": "vscode-blink-mind",
 	"displayName": "Vscode Blink Mind",
 	"description": "A mind map extention for vscode",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"publisher": "awehook",
 	"author": "awehook(awehook@163.com)",
 	"license": "MIT",
