@@ -21,10 +21,15 @@
       "highlightColor": "#50C9CE",
       "marginH": 60,
       "marginV": 20,
-      "fontFamily": "",
-      "bold": false,
-      "italic": false,
-      "textAlign": "left",
+      "contentStyle": {
+        "lineHeight": "1"
+      },
+    
+      "linkStyle": {
+        "lineRadius": 5,
+        "lineType": "curve",
+        "lineWidth": "3px"
+      },
       "rootTopic": {
         "background": "#ff8200",
         "fontSize": "34px",
