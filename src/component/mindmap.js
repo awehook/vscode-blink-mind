@@ -52,11 +52,15 @@ export class Mindmap extends React.Component {
 
   handleMsgDocChange(message) {
     console.log('handleMsgDocChange');
-    const obj = JSON.parse(message.model);
     const props = this.diagram.getDiagramProps();
     const { controller } = props;
-    const model = controller.run('deserializeModel', { controller, obj });
-    this.diagram.openNewModel(model);
+
+    if (message.model !== '') {
+      const obj = JSON.parse(message.model);
+      const model = controller.run('deserializeModel', { controller, obj });
+      this.diagram.openNewModel(model);
+    }
+
     this.setUpPersistence();
   }
 
@@ -92,8 +96,7 @@ export class Mindmap extends React.Component {
   };
 
   initModel() {
-    const model = generateSimpleModel();
-    this.state = { model };
+    this.state = { model: null };
   }
 
   renderDiagram() {

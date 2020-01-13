@@ -77,7 +77,6 @@ export class BlinkMindPanel {
       // console.log('onDocumentChanged');
       const json: string = this.getJson();
       const obj = { type: 'doc-change', model: json };
-      // console.log('postMessage:', obj);
       this._webViewPanel.webview.postMessage(obj);
     }
   }

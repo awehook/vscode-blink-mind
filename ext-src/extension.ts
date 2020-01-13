@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import { BlinkMindPanel } from './blink-mind-panel';
-import templateJson from './mindmap/template.json';
 import fs from 'fs';
 import path from 'path';
 
@@ -43,8 +42,7 @@ export function activate(context: vscode.ExtensionContext): void {
         .then(filename => {
           let targetFolder = vscode.workspace.rootPath;
           const fullname = path.join(targetFolder, filename + '.blinkmind');
-          const data = JSON.stringify(templateJson, null, 2);
-          fs.writeFile(fullname, data, function(err) {
+          fs.writeFile(fullname, "", function(err) {
             if (err) {
               vscode.window.showErrorMessage(err.message);
             }
