@@ -8,12 +8,13 @@
 <a href="https://github.com/awehook/vscode-blink-mind" target="__blank"><img src="https://img.shields.io/github/last-commit/awehook/vscode-blink-mind.svg?color=a38eed" alt="GitHub last commit" /></a>
 <a href="https://github.com/awehook/vscode-blink-mind/issues" target="__blank"><img src="https://img.shields.io/github/issues/awehook/vscode-blink-mind.svg?color=c977be" alt="GitHub issues" /></a>
 <a href="https://github.com/awehook/vscode-blink-mind" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/awehook/vscode-blink-mind?style=social"></a>
+<a href="https://join.slack.com/t/vscode-blink-mind/shared_invite/enQtODkyMzc0OTc0NDM1LWRlYjI3YzFmYjRiM2UwY2ExZGIzMDI3NzY4ODAwMmZlMTE3YjMxNGE1MDM4MTY5ZWNjZWJjYWQ4ZGFhZWZmZDc"><img src="https://img.shields.io/badge/join-us%20on%20slack-gray.svg?longCache=true&logo=slack&colorB=brightgreen" alt="Slack Widget"></a>
 </p>
 
 
 [vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is a extention for create and editing mind map in vscode.
 
-![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/webpack-mindmap.png)
+![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/slate-mindmap.png)
 
 # Change Logs
 
@@ -52,9 +53,13 @@
 
 ![image](https://github.com/awehook/images/raw/master/blink-mind/drag-and-drop.png)
 
+- Tags manager.
+
+![image](https://github.com/awehook/images/raw/master/blink-mind/tags-manager.png)
+
 - Multiple theme and theme editor.
 
-![image](https://github.com/awehook/images/raw/master/blink-mind/blink-mind-theme.png)
+![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/multi-theme.png)
 
 - Every topic's style include font style, border style, link style can be customize. 
 
