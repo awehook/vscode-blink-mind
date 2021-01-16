@@ -12,7 +12,7 @@
 </p>
 
 
-[vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is a extention for create and editing mind map in vscode.
+[vscode-blink-mind](https://github.com/awehook/vscode-blink-mind) is an extension for creating and editing a mind map in VS Code.
 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/slate-mindmap.png)
 
@@ -37,7 +37,7 @@
 # Features
 
 - Infinite canvas size for mind map editing.
-- Markdown editor for topic and topic notes. 
+- Markdown editor for topic and subtopic notes. 
 
 ![image](https://github.com/awehook/images/raw/master/vscode-blink-mind/rich-mark-down-editor.png)
 
